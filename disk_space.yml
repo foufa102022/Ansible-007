@@ -1,0 +1,18 @@
+---
+- name: check disk space
+  hosts: "{{ hosts }}"
+  tasks:
+    - name: get disk usage
+      command: df -h
+      register: disk_usage
+    - debug:
+        var: disk_usage.stdout
+
+    - name: check disk space available
+      shell: df -h / | awk 'NR==2 {print $5}'
+      register: disk_usage
+    - debug:
+        var: disk_usage.stdout
+
+  vars:
+    hosts: linux
