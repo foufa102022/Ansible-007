@@ -1,0 +1,12 @@
+---
+- hosts: all
+  vars:
+    greetings: Hello everyone!
+
+  tasks:
+  - name: Ansible Simple Variable Example Usage
+    debug:
+      msg: "{{ greetings }}, Let’s learn Ansible variables"
+
+# To override the value of the variable defined in the playbook with a different value : 
+# ansible-playbook -i inventory.txt -e '{"greetings":"linux"}' greetings.yml 
