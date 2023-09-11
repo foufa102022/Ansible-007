@@ -6,7 +6,7 @@
   tasks:
   - name: Ansible Simple Variable Example Usage
     debug:
-      msg: "{{ greetings }}, Let’s learn Ansible variables. Hello {{ lookup('env','USER') }}"
+      msg: "{{ greetings }}, Let’s learn Ansible variables. Hello {{ lookup('env','USER') }} "
 
 # To override the value of the variable defined in the playbook with a different value : 
 # ansible-playbook -i inventory.txt -e '{"greetings":"linux"}' greetings.yml 
